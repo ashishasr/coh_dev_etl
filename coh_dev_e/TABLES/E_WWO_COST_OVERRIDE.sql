@@ -1,0 +1,5 @@
+--------------------------------------------------------
+--  DDL for Table E_WWO_COST_OVERRIDE
+--------------------------------------------------------
+
+  CREATE TABLE "COH_DEV_E"."E_WWO_COST_OVERRIDE" ("CLASS_ID" VARCHAR2(10), "CLASS_DESCRIPTION" VARCHAR2(30), "CATEGORY_ID" VARCHAR2(20), "CATEGORY_DESCRIPTION" VARCHAR2(100), "REHAB_REPLACEMENT" VARCHAR2(15), "LABOR" VARCHAR2(15), "EQUIPMENT_COST" VARCHAR2(15), "DT_INSERTED" DATE DEFAULT Sysdate) ;
