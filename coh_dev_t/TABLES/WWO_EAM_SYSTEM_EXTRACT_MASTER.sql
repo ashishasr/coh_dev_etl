@@ -1,0 +1,6 @@
+--------------------------------------------------------
+--  DDL for Table WWO_EAM_SYSTEM_EXTRACT_MASTER
+--------------------------------------------------------
+
+  CREATE TABLE "COH_DEV_T"."WWO_EAM_SYSTEM_EXTRACT_MASTER" ("ASSET_ID" VARCHAR2(10), "CLASS_ID" VARCHAR2(10), "STATUS" VARCHAR2(20), "COMMISSION_DATE" VARCHAR2(20), "CATEGORY" VARCHAR2(20)) ;
+  GRANT READ ON "COH_DEV_T"."WWO_EAM_SYSTEM_EXTRACT_MASTER" TO "COH_DEV_L";
