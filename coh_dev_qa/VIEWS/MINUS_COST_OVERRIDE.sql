@@ -1,0 +1,73 @@
+--------------------------------------------------------
+--  DDL for View MINUS_COST_OVERRIDE
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE VIEW "COH_DEV_QA"."MINUS_COST_OVERRIDE" ("CLASS_CODE_REVISED", "CLASS_DESCRIPTION_REVISED", "CATEGORY_CODE_REVISED", "CATEGORY_DESCRIPTION_REVISED", "REHAB_REPLACEMENT", "LABOR", "EQUIPMENT_COST", "GENERAL_CONDITION_5_PERCENT", "CONTRACT_OH_N_PROFIT_15_PERCENT", "ENG_CM_ADMIN_LEGAL_20_PERCENT", "SUB_TOTAL", "CONTIGENCY_25_PERCENT", "TOTAL_COST") AS SELECT
+    class_code_revised,
+    class_description_revised,
+    category_code_revised,
+    category_description_revised,
+    rehab_replacement,
+    labor,
+    equipment_cost,
+    general_condition_5_percent,
+    contract_oh_n_profit_15_percent,
+    eng_cm_admin_legal_20_percent,
+    sub_total,
+    contigency_25_percent,
+    total_cost
+FROM
+    template_cost_override
+minus
+SELECT
+    class_code_revised,
+    class_description_revised,
+    category_code_revised,
+    category_description_revised,
+    rehab_replacement,
+    labor,
+    equipment_cost,
+    general_condition_5_percent,
+    contract_oh_n_profit_15_percent,
+    eng_cm_admin_legal_20_percent,
+    sub_total,
+    contigency_25_percent,
+    total_cost
+FROM
+    extract_cost_override
+union all    
+
+SELECT
+    class_code_revised,
+    class_description_revised,
+    category_code_revised,
+    category_description_revised,
+    rehab_replacement,
+    labor,
+    equipment_cost,
+    general_condition_5_percent,
+    contract_oh_n_profit_15_percent,
+    eng_cm_admin_legal_20_percent,
+    sub_total,
+    contigency_25_percent,
+    total_cost
+FROM
+    extract_cost_override
+minus
+SELECT
+    class_code_revised,
+    class_description_revised,
+    category_code_revised,
+    category_description_revised,
+    rehab_replacement,
+    labor,
+    equipment_cost,
+    general_condition_5_percent,
+    contract_oh_n_profit_15_percent,
+    eng_cm_admin_legal_20_percent,
+    sub_total,
+    contigency_25_percent,
+    total_cost
+FROM
+    template_cost_override
+;
